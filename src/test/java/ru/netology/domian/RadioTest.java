@@ -195,6 +195,25 @@ class RadioTest {
         int expected = 0;
         assertEquals(expected, actual);
     }
+    @Test
+    public void  setStationWithTwentyStations(){
+        Radio rad = new Radio(20);
+        rad.setCurrentStation(15);
+        int actual = rad.getCurrentStation();
+        int expected = 15;
+        assertEquals(expected, actual);
+
+    }
+    @Test
+    public void  setStationAndNextWithTwentyStations(){
+        Radio rad = new Radio(20);
+        rad.setCurrentStation(15);
+        rad.next();
+        int actual = rad.getCurrentStation();
+        int expected = 16;
+        assertEquals(expected, actual);
+
+    }
 
 
 }

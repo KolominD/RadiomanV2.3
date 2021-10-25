@@ -1,20 +1,21 @@
 package ru.netology.domian;
 
 public class Radio {
+
     public int currentStation;
     public int firstStation = 0;
     public int maxVolume = 100;
     public int minVolume = 0;
     public int currentVolume;
     public int countStation = 10;
-    public int lastStation = countStation - 1;
-
+    public int lastStation = this.countStation - 1;
     public Radio(int countStation) {
         this.countStation = countStation;
     }
 
     public Radio() {
     }
+
 
     public int getCurrentVolume() {
         return currentVolume;
@@ -37,7 +38,7 @@ public class Radio {
         if (newCurrentStation < firstStation) {
             return;
         }
-        if (newCurrentStation > lastStation) {
+        if (newCurrentStation > countStation - 1) {
             return;
         }
 
@@ -45,7 +46,7 @@ public class Radio {
     }
 
     public void next() {
-        if (currentStation < lastStation) {
+        if (currentStation < countStation - 1) {
             currentStation += 1;
             return;
         }
@@ -57,7 +58,7 @@ public class Radio {
             currentStation -= 1;
             return;
         }
-        currentStation = lastStation;
+        currentStation = countStation - 1;
     }
 
     public void increaseVolume() {
@@ -71,6 +72,8 @@ public class Radio {
             currentVolume -= 1;
         }
     }
+
+
 
 
 }
